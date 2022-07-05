@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: #5de6de;
+    background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+}
+
+#counter {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    width: 74px;
+    align-content: center;
+    
+    
+}
+
+h1 {
+    width: 76px;
+    color: white;
+    border: 2px solid black;
+    text-shadow: 1px 1px black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.memory-game {
+    width: 440px;
+    height: 225px;
+    display: flex;
+    flex-wrap: wrap;  
+    margin: auto;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width:calc(25% - 10px);
+    height:calc(50% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style:preserve-3d;
+    transition: transform .5s
+}
+
+.memory-card :active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg)
+}
+
+.front-face,
+.back-face {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 5px;
+    background:white;
+    border: 2px solid cyan;
+    backface-visibility: hidden;
+
+}
+
+
+.front-face {
+    transform:rotateY(180deg)
+}
+
+
